@@ -53,6 +53,6 @@ export const handleGetUser = async () => {
 }
 
 
-export const handleSignOut = async () => {
+export const handleLogout = async () => {
     (await cookies()).delete(process.env.NEXT_PUBLIC_AUTH_KEY as string)
 }
