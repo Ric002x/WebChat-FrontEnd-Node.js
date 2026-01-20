@@ -26,7 +26,7 @@ export const Header = () => {
     return (
         <header className="h-header bg-background border-b-2 border-black/25 dark:border-white/25 relative">
             {optionsOpen ?
-                <div className="absolute p-4 w-[10rem] flex flex-col gap-2 bg-foreground rounded-lg shadow-md top-15 right-15 min-[660px]:hidden">
+                <div className="absolute p-4 w-40 flex flex-col gap-2 bg-foreground rounded-lg shadow-md top-15 right-15 min-[660px]:hidden">
                     <span className="text-black hover:underline">
                         <User className="inline size-3 mr-2" />
                         <Link href={'/perfil'} className="inline text-[14px]">Perfil</Link>
