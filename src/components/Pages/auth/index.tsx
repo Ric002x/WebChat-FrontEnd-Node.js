@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState } from "react"
-import { LoginForm } from "./LoginLayout";
-import { RegisterForm } from "./RegisterLayout";
+import { LoginForm } from "../../Layouts/LoginLayout";
+import { RegisterForm } from "../../Layouts/RegisterLayout";
 
 export const AuthPage = () => {
     const { theme, setTheme } = useTheme()
