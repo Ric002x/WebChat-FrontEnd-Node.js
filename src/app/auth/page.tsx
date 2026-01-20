@@ -1,4 +1,4 @@
-import { AuthPage } from "@/src/components/Pages/auth"
+import { AuthPage } from "@/src/components/Pages/AuthPage"
 
 const Page = () => {
     return (

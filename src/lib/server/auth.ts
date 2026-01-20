@@ -4,6 +4,7 @@ import { login, register } from "@/src/lib/requests";
 import { LoginData, RegisterData } from "@/src/lib/schemas/authSchema";
 import { User } from '@/src/types/User';
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const handleLogin = async (data: LoginData) => {
     const response = await login(data)
@@ -54,5 +55,6 @@ export const handleGetUser = async () => {
 
 
 export const handleLogout = async () => {
-    (await cookies()).delete(process.env.NEXT_PUBLIC_AUTH_KEY as string)
+    (await cookies()).delete(process.env.NEXT_PUBLIC_AUTH_KEY as string);
+    redirect("/auth")
 }

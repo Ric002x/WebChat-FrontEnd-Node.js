@@ -6,6 +6,7 @@ import { handleRegister } from "@/src/lib/server/auth"
 import { useAuthStore } from "@/src/stores/authStore"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Lock, Mail } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { Controller, useForm } from "react-hook-form"
 import { toast } from "sonner"
 
@@ -15,6 +16,7 @@ type Props = {
 
 export const RegisterForm = ({ setAuth }: Props) => {
     const setUser = useAuthStore(state => state.setUser)
+    const router = useRouter()
 
 
     const form = useForm<RegisterData>({
@@ -36,6 +38,7 @@ export const RegisterForm = ({ setAuth }: Props) => {
         }
 
         setUser(response.data.user)
+        router.push("/")
     }
 
     return (

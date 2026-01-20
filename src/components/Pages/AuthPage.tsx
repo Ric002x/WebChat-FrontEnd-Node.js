@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState } from "react"
-import { LoginForm } from "../../Layouts/LoginLayout";
-import { RegisterForm } from "../../Layouts/RegisterLayout";
+import { LoginForm } from "../Layouts/LoginLayout";
+import { RegisterForm } from "../Layouts/RegisterLayout";
 
 export const AuthPage = () => {
     const { theme, setTheme } = useTheme()
@@ -13,7 +13,7 @@ export const AuthPage = () => {
 
 
     return (
-        <main className="h-screen w-screen bg-background flex justify-center items-center relative">
+        <div className="h-screen w-screen bg-background flex justify-center items-center relative">
             <Button variant="link" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="absolute top-5 right-5 cursor-pointer z-200">
                 <Sun className="h-[1.2rem] w-[1.2rem] text-black scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 max-[980px]:text-white" />
                 <Moon className="absolute h-[1.2rem] text-white w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
@@ -53,6 +53,6 @@ export const AuthPage = () => {
 
 
             </div>
-        </main>
+        </div>
     )
 }
