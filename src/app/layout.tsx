@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <body
-        className={`${nunito.className}`}
+        className={`${nunito.className} text-black dark:text-white`}
       >
         <ThemeProvider
           attribute="class"
