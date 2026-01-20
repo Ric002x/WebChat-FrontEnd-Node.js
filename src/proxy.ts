@@ -7,7 +7,7 @@ export async function proxy(request: NextRequest) {
 
     // Redirecionar para página de Login caso não houver usuário autenticado
     if (!request.nextUrl.pathname.startsWith('/auth') && !user) {
-        return NextResponse.redirect(new URL('/auth/login', request.url))
+        return NextResponse.redirect(new URL('/auth', request.url))
     }
 
     if (request.nextUrl.pathname.startsWith('/auth') && user) {
