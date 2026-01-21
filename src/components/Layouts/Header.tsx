@@ -26,16 +26,20 @@ export const Header = () => {
     return (
         <header className="h-header bg-background border-b-2 border-black/25 dark:border-white/25 relative">
             {optionsOpen ?
-                <div className="absolute p-4 w-40 flex flex-col gap-2 bg-foreground rounded-lg shadow-md top-15 right-15 min-[660px]:hidden">
-                    <span className="text-black hover:underline">
-                        <User className="inline size-3 mr-2" />
-                        <Link href={'/perfil'} className="inline text-[14px]">Perfil</Link>
-                    </span>
-                    <span className="text-black hover:underline">
-                        <LogOut className="inline size-3 mr-2" />
-                        <span onClick={handleUserLogout} className="inline text-[14px]">Sair</span>
-                    </span>
-                </div>
+                <>
+                    <div className="absolute top-0 left-0 w-screen h-screen z-10 bg-black/30" onClick={() => setOptionsOpen(!optionsOpen)}></div>
+
+                    <div className="absolute z-20 p-4 w-40 flex flex-col gap-2 bg-foreground rounded-lg shadow-md top-15 right-15 min-[660px]:hidden text-black dark:text-white">
+                        <span className="hover:underline">
+                            <User className="inline size-3 mr-2" />
+                            <Link href={'/perfil'} className="inline text-[14px]">Perfil</Link>
+                        </span>
+                        <span className="hover:underline">
+                            <LogOut className="inline size-3 mr-2" />
+                            <span onClick={handleUserLogout} className="inline text-[14px]">Sair</span>
+                        </span>
+                    </div>
+                </>
                 : ""}
 
             <nav className="flex items-center justify-between h-full w-[80%] mx-auto">
@@ -56,7 +60,7 @@ export const Header = () => {
                         </span>
                     </div>
 
-                    <div className="min-[660px]:hidden">
+                    <div className="min-[660px]:hidden z-20">
                         <Button variant={"link"} className="flex flex-col gap-0.5" onClick={() => setOptionsOpen(!optionsOpen)}>
                             <EllipsisVertical className={`h-[1.2rem] w-[1.2rem]  rotate-0 transition-all text-black dark:text-white ${optionsOpen ? "scale-0 -rotate-90" : "scale-100"} `} />
                             <X className={`absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all text-black dark:text-white ${optionsOpen ? "scale-100 rotate-0" : ""} `} />
