@@ -64,7 +64,7 @@ export const ChatList = ({ className, showChats, showList = false }: { showChats
     return (
         <div
             className={cn(
-                "px-5 bg-background min-[980px]:w-100 border-r border-black/20 relative", className)
+                "px-5 bg-background min-[980px]:w-100 h-full border-r border-black/20 relative", className)
             }
         >
             <div className="absolute bottom-3 right-3 bg-none">
@@ -83,7 +83,7 @@ export const ChatList = ({ className, showChats, showList = false }: { showChats
             </div>
 
             {showList &&
-                <div className="mt-8 space-y-2 w-full">
+                <div className="mt-8 space-y-2 w-full max-h-180 pr-2 overflow-hidden overflow-y-scroll">
                     <h3 className="font-bold">Conversas</h3>
                     {chats && chats.map(chat => (
                         <div key={chat.id}

@@ -135,15 +135,15 @@
 
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: #00000032;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000;
+  background: #4A7DFF;
 }
 
 /* HTML: <div class="loader"></div> */
