@@ -17,7 +17,8 @@ export type ChatActions = {
     setChat: (chat: Chat | null) => void,
     setChatMessages: (messages: Message[] | null) => void,
     setChats: (chats: Chat[] | null) => void,
-    setLoading: (Loading: boolean) => void
+    setLoading: (Loading: boolean) => void,
+    addChatMessage: (message: Message) => void;
 }
 
 export type ChatStore = ChatState & ChatActions
@@ -34,6 +35,12 @@ export const useChatStore = create<ChatStore>((set, get) => ({
     setShowChatList: (show) => set({ showChatList: show }),
     setChat: (chat) => chat?.id != get().chat?.id && set({ chat, chatMessages: null }),
     setChatMessages: (messages) => set({ chatMessages: messages }),
+    addChatMessage: (message) =>
+        set((state) => ({
+            chatMessages: state.chatMessages
+                ? [...state.chatMessages, message]
+                : [message],
+        })),
     setChats: (chats) => set({ chats }),
     setLoading: (loading) => set({ loading })
 }))

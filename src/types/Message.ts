@@ -22,7 +22,7 @@ export type APIDeleteMessage = {
 
 export type UpdateMessageEvent = {
     type: "create" | "delete",
-    message?: string,
+    message?: Message,
     query: {
         chatId: number,
         messageId?: number
