@@ -44,7 +44,7 @@ export const Header = () => {
 
             <nav className="flex items-center justify-between h-full w-[80%] mx-auto">
                 <div>
-                    <h1 className="text-2xl bold">WebChat</h1>
+                    <h1 className="text-2xl bold"><Link href={'/'}>WebChat</Link></h1>
                 </div>
 
                 <div className="flex flex-row-reverse gap-4 min-[660px]:flex-row">
