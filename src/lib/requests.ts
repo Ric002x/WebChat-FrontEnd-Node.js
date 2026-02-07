@@ -79,7 +79,7 @@ export const getMessages = async (chatId: number) => {
     })
 }
 
-export const createMessage = async (chatId: number, data: FormData) => {
+export const createMessage = async (chatId: number, data: { body: string }) => {
     return await api<APICreateMessage>({
         endpoint: `/chat/message/${chatId}`,
         method: "POST",
