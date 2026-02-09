@@ -29,7 +29,7 @@ export const NewChat = ({ createChat }: Props) => {
     return (
         <>
             <Popover>
-                <PopoverTrigger>
+                <PopoverTrigger asChild>
                     <Button variant="link" className="hover:bg-none">
                         <Image src={MessageIcon} alt="new message icon" />
                     </Button>
