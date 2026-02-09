@@ -13,7 +13,7 @@ export const UserInfo = () => {
 
     return (
         <ProfileLayout>
-            <div className="p-10">
+            <div className="p-10 overflow-y-scroll h-main">
                 <div className="min-[980px]:hidden mb-12">
                     <Avatar className="size-24 mb-4">
                         <AvatarImage src={user?.avatar} alt={user?.username} />
