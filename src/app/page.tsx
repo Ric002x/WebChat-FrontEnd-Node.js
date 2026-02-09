@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <>
             <div className="flex h-main w-full overflow-hidden relative max-[980px]:flex-row-reverse">
-                <ChatList showChats={true} showList
+                <ChatList showChats={true}
                     className={`max-[980px]:w-full max-[980px]:absolute transform transition-all duration-500 ${chat ? "max-[980px]:-translate-x-full" : "max-[980px]:translate-x-0"}`} />
 
                 <div className={`bg-background-chat flex-1 h-full max-[980px]:w-full max-[980px]:absolute transform transition-all duration-500 ${chat ? "max-[980px]:translate-x-0" : "max-[980px]:translate-x-full"}`}>
