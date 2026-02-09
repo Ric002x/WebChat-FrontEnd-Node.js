@@ -29,7 +29,7 @@ export const register = async (data: RegisterData) => {
     })
 }
 
-export const updateUser = async (data: UpdateUserData) => {
+export const updateUser = async (data: FormData) => {
     return await api<APIUpdateUser>({
         endpoint: "/user/update",
         method: "PUT",

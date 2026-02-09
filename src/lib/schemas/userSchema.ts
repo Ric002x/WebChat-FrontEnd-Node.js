@@ -8,7 +8,7 @@ export const updateUserSchema = z.object({
     username: z.string({ error: "Campo obrigatório" })
         .min(5, { error: "Mínimo de 5 caracteres" })
         .max(15, { error: "Máximo de 15 caracteres" }),
-    birthday: z.iso.datetime({ error: "Data deve estar no formato ISO 8601. Ex.: 2020-01-01T06:15:00Z" })
+    birthday: z.iso.date({ error: "Data inválida" })
 })
 
 export type UpdateUserData = z.infer<typeof updateUserSchema>
@@ -23,6 +23,6 @@ export const updatePasswordSchema = z.object({
     {
         error: "As senhas não coincidem", path: ["confirmPassword"]
     }
-).transform(({ confirmPassword, ...rest }) => rest);
+)
 
 export type UpdatePasswordData = z.infer<typeof updatePasswordSchema>
