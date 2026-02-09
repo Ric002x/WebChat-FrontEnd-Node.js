@@ -4,7 +4,10 @@ export type User = {
     email: string,
     username: string,
     avatar: string,
-    lastAccess: Date
+    lastAccess: Date,
+    birthday: string | null,
+    createdAt: Date,
+    passwordUpdatedAt: Date | null
 }
 
 export type APIUpdateUser = {
