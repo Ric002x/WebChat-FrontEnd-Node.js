@@ -7,7 +7,8 @@ import { useChatStore } from "@/src/stores/chatStore"
 import { EllipsisVertical, LogOut, Moon, Sun, User, X } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
-import { useState } from "react"
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
 export const Header = () => {
@@ -15,6 +16,12 @@ export const Header = () => {
     const { clearUser } = useAuthStore()
     const { setChat } = useChatStore()
     const [optionsOpen, setOptionsOpen] = useState(false)
+    const pathname = usePathname()
+
+    useEffect(() => {
+        // Sempre que a rota mudar, fechamos o menu
+        setOptionsOpen(false);
+    }, [pathname]);
 
     const handleUserLogout = async () => {
         await handleLogout()
